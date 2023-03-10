@@ -1,0 +1,14 @@
+STATIC
+touch stringlibrary.c
+gcc -c stringlibrary.c
+ar cr libstringlibrary.a stringlibrary.o
+gcc -o main main.c -L. -lstringlibrary
+./main
+
+DYNAMIC
+touch stringlibrary.c
+gcc -fPIC -c stringlibrary.c
+gcc -fPIC -shared -o libstringlibrary.so stringlibrary.o
+gcc -o main main.c -L. -lstringlibrary
+export LD_LIBRARY_PATH=/run/media/sobiesia/Windows/Users/aleks/OneDrive/Pulpit/Studia/SEMESTR\ 4/SYSOPY/labs/SO-2023/lab1/DynamicLibrary/
+./main
