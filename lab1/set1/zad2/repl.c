@@ -3,6 +3,8 @@
 #include <time.h>
 #include "libwc.h"
 #include <regex.h>
+#include <time.h>
+#include <sys/times.h>
 
 #define MAX_COMMAND_SIZE 2048
 
@@ -135,6 +137,11 @@ int main()
     char *input;
     size_t inputSize;
 
+    struct timespec timespecStart, timespecEnd;
+    struct tms tmsStart, tmsEnd;
+
+    double real, user, system;
+
     while (replActive)
     {
         printf("REPL>> ");
@@ -145,7 +152,21 @@ int main()
         interpret_input(input, inputSize);
         fflush(NULL);
 
+        clock_gettime(CLOCK_REALTIME, &timespecStart);
+        times(&tmsStart);
+
         execute_input(array);
+
+        times(&tmsEnd);
+        clock_gettime(CLOCK_REALTIME, &timespecEnd);
+
+        real = (timespecEnd.tv_nsec - timespecStart.tv_nsec)/1000000000.0;
+        user = tmsEnd.tms_cutime - tmsStart.tms_cutime;
+        system = tmsEnd.tms_cstime - tmsStart.tms_cstime;
+        printf("Real time: %fs\n", real);
+        printf("User time: %fns\n", user);
+        printf("System time: %fns\n", system);
+
         fflush(NULL);
         free(input);
     }
