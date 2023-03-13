@@ -1,0 +1,137 @@
+
+results_shared_.txt
+-------------------
+REPL>> REPL>> initializing
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 1.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 174  412 4065 repl.c
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+  65  193 1694 Makefile
+!Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 116  260 2763 libwc.c
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 28  52 534 libwc.h
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> destroying
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> exiting the repl
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+
+
+results_static_.txt
+-------------------
+REPL>> REPL>> initializing
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 13.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 1.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 174  412 4065 repl.c
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+  65  193 1694 Makefile
+!Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 116  260 2763 libwc.c
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> showing
+ 28  52 534 libwc.h
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> deleting
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> destroying
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> exiting the repl
+Real time: 0.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+
+

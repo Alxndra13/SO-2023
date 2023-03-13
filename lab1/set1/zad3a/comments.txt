@@ -1,0 +1,3 @@
+Z przeprowadzenia testów w celu porównania czasów wykonywania operacji z wykorzystaniem biblioteki statycznej 
+oraz wykorzystaniem biblioteki dzielonej wynika że, z użyciem biblioteki dzielonej operacje (zwłaszcza count)
+są wykonywane nieznacznie szybciej niż z wykorzystaniem tej drugiej opcji.

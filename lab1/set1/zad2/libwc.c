@@ -25,7 +25,7 @@ void lib_init(BlockArray *blockArray, size_t size)
 void lib_fill(BlockArray *blockArray, char *inputName)
 {
 
-    char tmpName[] = "wc_out_XXXXXX";
+    char tmpName[] = "/tmp/wc_out_XXXXXX";
     int tmpFile = mkstemp(tmpName);
 
     // sprawdzenie czy sie utworzył

@@ -1,0 +1,8 @@
+Z przeprowadzenia testów w celu porównania czasów wykonywania operacji z wykorzystaniem biblioteki statycznej 
+oraz wykorzystaniem biblioteki dzielonej, z podziałem na 5 poziomów optymalizacji kompilacji (-O, ... -Os) wynika że:
+-> Sposród wykonania testu z użyciem biblioteki dzielonej, użycie flag -Os oraz -O było nieznacznie wolniejsze 
+    niż użycie pozostałych
+-> Sposród wykonania testu z użyciem biblioteki statyczniej, użycie flag -OO, O1, O było wolniejsze
+    niż użycie pozostałych
+-> Porównując użycie 2 typów bibliotek z tą samą flagą, można zauważyć nieznaczną przewagę szybkości na rzecz biblioteki
+    dzielonej, z wyjątkiem użycia flag Os i O, w przypadku, których nieznacznie szybsze okazało się wykorzytanie biblioteki statycznej
