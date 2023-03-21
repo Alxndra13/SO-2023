@@ -1,0 +1,8 @@
+Pomiar dla lib
+TIME: 270 ms
+Wynik tr: 
+Files tmp and output_lib.txt are identical
+Pomiar dla sys
+TIME: 268 ms
+Wynik tr: 
+Files tmp and output_sys.txt are identical

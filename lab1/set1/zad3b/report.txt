@@ -6,20 +6,20 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 1.000000 ticks
+Real time: 13.000000 ms
+User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -74,16 +74,16 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
 User time: 1.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
@@ -150,12 +150,12 @@ Real time: 12.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 1.000000 ticks
+Real time: 13.000000 ms
+User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -215,15 +215,15 @@ User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
-User time: 0.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
 User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -282,16 +282,16 @@ Real time: 12.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
 Real time: 13.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
 User time: 0.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -346,15 +346,15 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 13.000000 ms
+Real time: 12.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 13.000000 ms
+Real time: 12.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
@@ -414,15 +414,15 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: -987.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
@@ -486,16 +486,16 @@ Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 1.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 1.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
+Real time: 13.000000 ms
+User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -550,6 +550,10 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
+Real time: 13.000000 ms
+User time: 0.000000 ticks
+System time: 0.000000 ticks
+REPL>> REPL>> counting
 Real time: 12.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
@@ -559,11 +563,7 @@ User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
-User time: 0.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 0.000000 ticks
+User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -630,7 +630,7 @@ Real time: 12.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
@@ -686,7 +686,7 @@ Real time: 0.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
-Real time: 12.000000 ms
+Real time: 13.000000 ms
 User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
@@ -699,7 +699,7 @@ User time: 1.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
-User time: 1.000000 ticks
+User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
@@ -760,14 +760,14 @@ System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 13.000000 ms
 User time: 0.000000 ticks
+System time: 1.000000 ticks
+REPL>> REPL>> counting
+Real time: 12.000000 ms
+User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> counting
 Real time: 12.000000 ms
 User time: 1.000000 ticks
-System time: 0.000000 ticks
-REPL>> REPL>> counting
-Real time: 12.000000 ms
-User time: 0.000000 ticks
 System time: 0.000000 ticks
 REPL>> REPL>> showing
  174  412 4065 repl.c
