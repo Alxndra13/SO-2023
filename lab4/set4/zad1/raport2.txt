@@ -1,0 +1,10 @@
+W wersji fork:
+- ignore - sygnał jest ignorowany w obydwu procesach
+- handler - handler zostaje wywołany w obydwu procesach
+- mask - maska działa na obydwu procesach
+- pending - sygnał który jest oczekujący jest widoczny w procesie rodzica ale nie dziecka
+
+W wersji exec:
+- ignore - sygnał jest ignorowany w obydwu
+- mask - maska działa na obydwu
+- pending - sygnał który jest oczekujący jest widoczny w obydwu

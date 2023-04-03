@@ -1,15 +1,16 @@
 CC = gcc
 CFLAGS = -Wall
-TARGET1 = fork
-TARGET2 = exec
+TARGET1 = sender
+TARGET2 = catcher
 
 all:
-	make fork_compile
+	make sender_compile
+	make catcher_compile
 
-fork_compile:
+sender_compile:
 	$(CC) $(CFLAGS) $(TARGET1).c -o $(TARGET1)
 
-exec_compile:
+catcher_compile:
 	$(CC) $(CFLAGS) $(TARGET2).c -o $(TARGET2)
 
 clean:
