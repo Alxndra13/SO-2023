@@ -45,7 +45,7 @@ bool process(char *taskType)
 {
     if (strcmp(taskType, "ignore") == 0)
     {
-        signal(SIGUSR1, SIG_IGN); // SIG_IGN -> signal will be ignored
+        // signal(SIGUSR1, SIG_IGN); // SIG_IGN -> signal will be ignored
         raise_signal();
     }
     else if (strcmp(taskType, "handler") == 0)
