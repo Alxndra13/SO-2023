@@ -1,0 +1,20 @@
+Pomiary dla dokładności 0.000000001
+n = 1
+Result: 3.141593
+Time: 3s 309340633ns
+
+n = 10
+Result: 3.141593
+Time: 0s 485030294ns
+
+n = 100
+Result: 3.141593
+Time: 0s 349977015ns
+
+n = 1000
+Result: 3.141595
+Time: 0s 360170803ns
+
+n = 10000
+Result: 3.141615
+Time: 1s 454962217ns
