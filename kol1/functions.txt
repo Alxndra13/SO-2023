@@ -1,0 +1,120 @@
+--- files
+fopen (const char *filename, const char *mode)
+    fopen(file, "r") r - read, w - write
+fread (buffer, size_t size, size_t max_size, FILE * file)
+    (fread) size - rozmiar w bytes do przeczytania, max_size - max liczba elementów do przeczytania
+fwrite (buffer, size_t size, size_t max_size, FILE *file) - argumenty analogiczne do fread
+    fwrite(block, sizeof(char), inputSize, outputFile);
+fclose (FILE* file) - zamyka plik
+fseek (FILE * file, long offset, int whence);
+    (fseek) offset - bytes do przejscia od whence, whence - pozycja startowa
+    fseek(file, 0L, SEEK_END)
+    fseek(file, 0L, SEEK_SET)
+ftell - wartosc aktualnej fozycji
+    long size = ftell(file) //przy endzie da rozmiar pliku
+mkstep(char *filename) - generuje unikalną tymczasową nazwę pliku z templatki, tworzy i otwiera plik, zwraca file descriptor pliku
+    (mkstep) char tmpName[] = "/tmp/wc_out_XXXXXX";
+    int tmpFile = mkstemp(tmpName);
+
+--directories
+opendir (char *dirname) - otwiera directory, zwraca wartość typu DIR 
+    DIR *directory = opendir(path);
+struct dirent *current - punkt wejściowy aktualnego directory
+    (dirent) current->d_name - nazwa directory - char*
+readdir (DIR *directory) - zwraca pointer na dirent - punkt wejściowy do następnego directory
+struct stat stats - struktura przechowująca informacje o pliku
+    (stat) stats.st_mode - możliwość sprawdzenia typu pliku np
+    (stat) if(S_ISDIR(stats.st_mode)) - jest katalogiem
+    (stat) if(S_ISREG(stats.st_mode)) - jest regularnym plikiem
+stat (char *path, struct stat &stats) - przechwytuje informacje o elemencie path do struktury stat
+closedir (DIR *directory) - zamyka directory
+
+
+
+--- memory
+malloc (size_t size) dynamiczna alokacja
+    int* element = malloc(sizeof(int))
+calloc (size_t num, size_t size) dynamiczna alokacja bloku pamięci na array elementów zainicjalizowanych na 0
+    char* array = (char*)calloc(10, sizeof(char)) - array 10 elementów o rozmiarze char
+free (void* element) - zwolnienie pamięci
+realloc (void* element, size_t size) - można np zwiększyć miejsce w tablicy z 5 do 10
+    arr = (int *) realloc(arr, sizeof(int));
+
+--- signals
+-- sets
+sigset_t - typ reprezentujący set sygnałów
+sigemptyset (sigset_t &set) - set jest pusty
+sigfillset (sigset_t &set) - set wypełniony wszystkimi możliwymi sygnałami
+sigaddset (sigset_t &set, int signum) - dodanie do istniejącego setu nowego sygnału
+    sigaddset(&mask, SIGUSR1)
+sigdelset (sigset_t &set, int signum) - usunięcie z istniejącego setu danego sygnału
+sigismember(const sigset_t &set, int signum) - sprawdzenie czy sygnał jest w setcie, 1 - tak, 0 - nie, -1 - error
+sigpending(sigset_t &set) - zwraca do zmiennej set zbiór pending sygnałów
+
+sigprocmask (int how, const sigset_t set, sigset_t oldset) - kontrola i zmiana blokowanych sygnałów
+    (sigprocmask) how - sposób zmiany - SIG_BLOCK - dodanie sygnałów z set do istniejącej maski, SIG_UNBLOCK - usunięcie ich z maski, SIG_SETMASK - nadpisanie starej maski setem
+    (sigprocmask) set - nowy set sygnalów, oldset - NULL / poprzedni set maskowanych sygnałów
+pause () - wstrzymanie thread dopóki nie dostanie sygnału
+
+-- upośledzone
+signal (sigset_t signum, &signal_handler) - ustawienie handleru na sygnale, ale to prosta metoda
+    signal(SIGUSR1, &signal_handler) 
+kill (pid_t pid, int signum) - wysłanie sygnału do procesu
+    kill(821748, SIGUSR1) - wyśle go do procesu 821748
+raise (int signum) - wysyła sygnał do siebie samego
+
+-- sigaction
+struct sigaction action - struktura do modyfikacji działania procesu przy otrzymaniu określonego sygnału
+    (sigaction) action.sa_handler = &sighandler - ustawienie funkcji która obsługuje dany sygnał // SIG_IGN - zignoruj sygnał
+    (sigaction) action.sa_mask = &mask - otrzymuje set sygnałów które mają zostać zablokowane
+    (sigaction) action.sa_flags = (int) FLAG - 0 - brak, SA_SIGINFO - wtedy sighandler bierze 3 argumenty zamiast 1, ale wtedy ustawiamy action.sa_sigaction zamiast sa_handler
+    
+    (sigaction) z flagą SA_SIGINFO void sighandler(int signum, siginfo_t *info, void *context)
+sigaction (int signum, struct sigaction action, NULL) - ustaw specyfikacje z action dla danego sygnału
+    sigaction(SIGUSR1, &action, NULL)
+
+siginfo_t * info - struktura trzymające szczegółowe informacje o sygnale
+    (siginfo_t) info->si_value - wartość sygnału typu sigval
+
+sigval - typu union, pole siginfo_t
+    (sigval) int sigval_int - jakiś numer do przesłania
+    (sigval) void *sigval_ptr - jakiś pointer do struktury do przesłania
+
+sigqueue (pid_t pid, int signum, const union sigval value) - wysłanie sygnału i danych typu sigval
+    sigqueue(1234, SIGUSR1, value) - wyśle do procesu 1234 sygnał SIGUSR1 i dane value
+
+
+--- pipes
+pipe (int fd[2]) - stworzenie nienazwanego potoku
+close (int fd) - zamknięcie deskryptora potoku, można też zamknąć fd[1/2]
+read (int fd, void content, size_t sizeof(content)) - czytanie z pipe i zapisywanie do zmiennej content
+    read(fd[0], &content, sizeof(content))
+write (int fd, &content, sizeof(content)) - pisanie do pipe ze zmiennej content
+    write(fd[1], &content, sizeof(content))
+dup (int fd) - duplikuje otwarty file descriptor
+
+--- processes
+fork - fork() - tworzy nowy proces
+pid_t pid = fork() - zwraca pid powstałego procesu
+execl (char *path, char *arg0, ...., char *argn) - wywołanie pliku w procesie
+    execl("../main.c", "function", 1) - wywoła funckje function(1) w main.c
+wait - wait(NULL) oczekuje na zakończenie procesu potomnego
+getpid - getpid() - zwraca aktualny proces
+getppid - getppid() - zwraca proces rodzica aktualnego procesu
+fflush(FILE *stream) - zmusza wypisanie wszystkich buffered danych od użytkownika na output
+    fflush(NULL) - zadziała na wszystko
+
+--- strings
+sprintf (char* str, char* format, element1, ..., elementn) - konwertuje elementy na stringa i wkłada do str zgodnie z formatem
+    sprintf(str, "%d siemano to jest n", n); gdzie n - int
+snprintf(char* str, size_t size, char* format, element1, ..., elementn) - analogicznie do snprintf, ale zapisuje maksymalnie size bitów
+    (snprintf) char wc_command[MAX_COMMAND_SIZE];
+    snprintf(wc_command, MAX_COMMAND_SIZE, "wc %s 1> %s", inputName, tmpName);
+string (char *dst, char* src) - kopiuje stringa z src do dst
+
+-- regex
+regex_t rgx - format regexu
+regcomp(regex_t * rgx, char* regex, int cflags) - kompilacja regexu do zmiennej typu regex_t
+    regcomp(&initRgx, "init [0-9][0-9]*", 0);
+regexec (regex_t * rgx, char *string, size_t nmach, regmatch_t pmach, int eflags) - sprawdza czy string pasuje do danego regexu
+    if (regexec(&initRgx, input, 0, NULL, 0) == 0) - zwraca zero przy sukcesie
