@@ -1,0 +1,76 @@
+INIT: ClientID: 0.
+Time: 22:53:57
+INIT: ClientID: 1.
+Time: 22:54:06
+INIT: ClientID: 0.
+Time: 22:55:29
+INIT: ClientID: 1.
+Time: 22:55:32
+LIST: ClientID: 0.
+Time: 22:55:35
+LIST: ClientID: 1.
+Time: 22:55:38
+LIST: ClientID: 1.
+Time: 22:55:45
+STOP: ClientID: 0.
+Time: 22:56:32
+INIT: ClientID: 0.
+Time: 22:56:46
+INIT: ClientID: 0.
+Time: 22:57:27
+2ALL: hello. ClientID: 0.
+Time: 22:57:37
+INIT: ClientID: 1.
+Time: 22:57:49
+2ALL: hello. ClientID: 1.
+Time: 22:57:52
+LIST: ClientID: 0.
+Time: 22:57:55
+STOP: ClientID: 0.
+Time: 22:58:41
+STOP: ClientID: 0.
+Time: 22:58:41
+INIT: ClientID: 0.
+Time: 22:58:54
+INIT: ClientID: 0.
+Time: 23:00:18
+2ALL: hello. ClientID: 0.
+Time: 23:00:31
+INIT: ClientID: 1.
+Time: 23:00:34
+STOP: ClientID: 0.
+Time: 23:00:49
+INIT: ClientID: 0.
+Time: 23:01:03
+INIT: ClientID: 1.
+Time: 23:01:05
+2ALL: hello. ClientID: 0.
+Time: 23:01:25
+LIST: ClientID: 1.
+Time: 23:01:29
+INIT: ClientID: 0.
+Time: 23:01:49
+INIT: ClientID: 1.
+Time: 23:01:51
+2ONE: siema. SenderID: 0, ReceiverID: 1.
+Time: 23:01:54
+LIST: ClientID: 1.
+Time: 23:01:57
+STOP: ClientID: 0.
+Time: 23:01:58
+STOP: ClientID: 0.
+Time: 23:01:59
+INIT: ClientID: 0.
+Time: 23:02:49
+INIT: ClientID: 1.
+Time: 23:02:51
+LIST: ClientID: 0.
+Time: 23:02:54
+2ALL: hej. ClientID: 0.
+Time: 23:02:57
+LIST: ClientID: 1.
+Time: 23:03:00
+STOP: ClientID: 0.
+Time: 23:03:00
+STOP: ClientID: 0.
+Time: 23:03:01
