@@ -13,7 +13,7 @@
 #define HAIRDRESSER_TOTAL 3 // hairdressers
 #define CHAIR_TOTAL 2 // chairs
 #define QUEUE_TOTAL 5 // waiting room  - queue
-#define HAIRCUT_TOTAL 128 // number of hairstyles
+#define HAIRCUT_TOTAL 10 // number of hairstyles
 #define BUFFER_SIZE 1024
 #define CLIENT_TOTAL 10
 

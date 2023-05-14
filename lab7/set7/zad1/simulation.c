@@ -10,11 +10,10 @@ int main()
     shared[0] = '\0';
 
 
-
-    sem_create(SEM_QUEUE_NAME, QUEUE_TOTAL);
-    sem_create(SEM_CHAIRS_NAME, QUEUE_TOTAL);
-    sem_create(SEM_HAIRDRESSERS_NAME, QUEUE_TOTAL);
-    sem_create(SEM_BUFFER_NAME, QUEUE_TOTAL);
+    sem_create(SEM_QUEUE_NAME, CHAIR_TOTAL);
+    sem_create(SEM_CHAIRS_NAME, 0);
+    sem_create(SEM_HAIRDRESSERS_NAME, 0);
+    sem_create(SEM_BUFFER_NAME, 1);
 
     printf("SIMULATION: Welcome to the hair salon!\n");
     fflush(stdout);

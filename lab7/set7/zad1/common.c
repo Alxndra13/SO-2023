@@ -6,7 +6,7 @@ char queue_pop(char *queue)
 {
     if (strlen(queue) == 0) // if the queue is empty we return 0 to indicate that there's nothing to be popped
     {
-        return 0;
+        return -1;
     }
     char element = queue[0];                     // element being popped from the queue
     memcpy(queue, queue + 1, strlen(queue) + 1); // shift all element in queue to the left
@@ -15,7 +15,7 @@ char queue_pop(char *queue)
 
 void queue_push(char *queue, char value)
 {
-    if (BUFFER_SIZE == strlen(queue) + 1) // we dont put anything into the queue, ignore new element
+    if (QUEUE_TOTAL == strlen(queue) + 1) // we dont put anything into the queue, ignore new element
     {
         exit(0);
     }
@@ -114,17 +114,12 @@ Semaphore sem_create(const char *name, int value)
 
 Semaphore sem_open(const char *name) // open an existing semaphore
 {
-    // printf("UNLINK2 \n");
-    // printf("%s\n", name);
-    // fflush(stdout);
     key_t key = ftok(NAME, name[0]);
     if (key == -1)
     {
         perror("Error while opening semaphore - ftok failed\n");
         exit(1);
     }
-    // printf("UNLINK3\n");
-    // fflush(stdout);
     Semaphore semid = semget(key, 1, 0); // access an existing semaphore set
     if (semid == -1)
     {

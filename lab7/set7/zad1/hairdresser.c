@@ -6,15 +6,10 @@ int main(void)
     if (queue == NULL)
         return -1;
 
-    Semaphore sem_queue;
-    Semaphore sem_chairs;
-    Semaphore sem_hairdressers;
-    Semaphore sem_buffer;
-
-    sem_queue = sem_open(SEM_QUEUE_NAME);
-    sem_chairs = sem_open(SEM_CHAIRS_NAME);
-    sem_hairdressers = sem_open(SEM_HAIRDRESSERS_NAME);
-    sem_buffer = sem_open(SEM_BUFFER_NAME);
+    Semaphore sem_queue = sem_open(SEM_QUEUE_NAME);
+    Semaphore sem_chairs = sem_open(SEM_CHAIRS_NAME);
+    Semaphore sem_hairdressers = sem_open(SEM_HAIRDRESSERS_NAME);
+    Semaphore sem_buffer = sem_open(SEM_BUFFER_NAME);
 
     printf("Hairdresser pid: %d arrived\n", getpid());
     fflush(stdout);
@@ -29,7 +24,7 @@ int main(void)
 
         printf("Hairdresser pid: %d is working on the haircut %d\n", getpid(), haircut);
         fflush(stdout);
-        usleep(1000);
+        usleep(1000*haircut); // the bigger the haircut number, the longer it takes
         printf("Hairdresser pid: %d finished working on the haircut %d\n", getpid(), haircut);
         fflush(stdout);
 
