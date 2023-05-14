@@ -1,12 +1,15 @@
 CC = gcc
 CFLAGS = -Wall
-TARGET = main
 
 all:
 	make compile
 
 compile:
-	$(CC) $(CFLAGS) $(TARGET).c -o $(TARGET)
+	$(CC) $(CFLAGS) client.c common.c -lrt -lpthread -o client
+	$(CC) $(CFLAGS) hairdresser.c common.c -lrt -lpthread -o hairdresser
+	$(CC) $(CFLAGS) simulation.c common.c -lrt -lpthread -o simulation
+
+	$(CC) $(CFLAGS) simulation.c -o simulation
 
 clean:
-	rm -f $(TARGET)
+	rm -f common client hairdresser simulation
