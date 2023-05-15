@@ -9,11 +9,10 @@ int main()
     }
     shared[0] = '\0';
 
-
-    sem_create(SEM_QUEUE_NAME, CHAIR_TOTAL);
-    sem_create(SEM_CHAIRS_NAME, 0);
-    sem_create(SEM_HAIRDRESSERS_NAME, 0);
-    sem_create(SEM_BUFFER_NAME, 1);
+    sem_create(SEM_QUEUE_NAME, QUEUE_TOTAL);
+    Semaphore sem_chairs = sem_create(SEM_CHAIRS_NAME, 0);
+    sem_create(SEM_HAIRDRESSERS_NAME, CHAIR_TOTAL);
+    sem_create(SEM_BUFFER_NAME, 0);
 
     printf("SIMULATION: Welcome to the hair salon!\n");
     fflush(stdout);
@@ -27,15 +26,18 @@ int main()
 
     for (int i = 0; i < CLIENT_TOTAL; i++)
     {
+        sleep(1);
         if (fork() == 0)
         {
             execl(CLIENT_EXECUTABLE, CLIENT_EXECUTABLE, NULL);
         }
     }
 
-    while(wait(NULL) > 0){};
-    printf("SIMULATION: Everything done. Closing the salon.\n");
+    while (wait(NULL) > 0)
+    {
+    };
 
+    printf("SIMULATION: Everything done. Closing the salon.\n");
 
     sem_unlink(SEM_QUEUE_NAME);
     sem_unlink(SEM_HAIRDRESSERS_NAME);
@@ -46,7 +48,6 @@ int main()
     shared_memory_clean(NAME);
 
     printf("SIMULATION: memory cleaned.\n");
-
 
     return 0;
 }

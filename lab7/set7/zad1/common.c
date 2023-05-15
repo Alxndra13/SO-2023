@@ -15,7 +15,7 @@ char queue_pop(char *queue)
 
 void queue_push(char *queue, char value)
 {
-    if (QUEUE_TOTAL == strlen(queue) + 1) // we dont put anything into the queue, ignore new element
+    if (QUEUE_TOTAL == strlen(queue)) // we dont put anything into the queue, ignore new element
     {
         exit(0);
     }

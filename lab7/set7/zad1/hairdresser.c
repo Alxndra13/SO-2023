@@ -16,31 +16,39 @@ int main(void)
 
     while (1)
     {
-        sem_wait_for(sem_hairdressers);
+        sem_wait_for(sem_chairs);
 
-        sem_wait_for(sem_buffer);
         char haircut = queue_pop(queue);
-        sem_release(sem_buffer);
+        if (haircut == -1)
+        {
+            if (queue_empty(queue))
+            {
+                sleep(1);
+                if (queue_empty(queue))
+                    break;
+            }
+        }
 
         printf("Hairdresser pid: %d is working on the haircut %d\n", getpid(), haircut);
         fflush(stdout);
-        usleep(1000*haircut); // the bigger the haircut number, the longer it takes
+        sleep(haircut); // the bigger the haircut number, the longer it takes
         printf("Hairdresser pid: %d finished working on the haircut %d\n", getpid(), haircut);
         fflush(stdout);
 
-        sem_release(sem_chairs);
-        sem_release(sem_queue);
+        sem_release(sem_buffer);
 
         if (queue_empty(queue))
         {
-            usleep(1000000);
+            sleep(1);
             if (queue_empty(queue))
                 break;
         }
     }
 
-    printf("Hairdresser pid: %d has empty queue. He is leaving.\n", getpid());
+    printf("Hairdresser pid: %d sees empty queue. He is leaving.\n", getpid());
     fflush(stdout);
+
+    sem_release(sem_chairs);
 
     shared_memory_detach(queue);
     return 0;

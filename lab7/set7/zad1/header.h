@@ -12,7 +12,7 @@
 // hairsalon simulation numbers
 #define HAIRDRESSER_TOTAL 3 // hairdressers
 #define CHAIR_TOTAL 2 // chairs
-#define QUEUE_TOTAL 5 // waiting room  - queue
+#define QUEUE_TOTAL 3 // waiting room  - queue
 #define HAIRCUT_TOTAL 10 // number of hairstyles
 #define BUFFER_SIZE 1024
 #define CLIENT_TOTAL 10
@@ -20,7 +20,6 @@
 // queue
 char queue_pop(char*);
 void queue_push(char*, char);
-// bool queue_full(char*);
 bool queue_empty(char*);
 
 // library
