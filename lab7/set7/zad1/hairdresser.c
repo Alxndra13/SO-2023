@@ -6,9 +6,7 @@ int main(void)
     if (queue == NULL)
         return -1;
 
-    Semaphore sem_queue = sem_open(SEM_QUEUE_NAME);
     Semaphore sem_chairs = sem_open(SEM_CHAIRS_NAME);
-    Semaphore sem_hairdressers = sem_open(SEM_HAIRDRESSERS_NAME);
     Semaphore sem_buffer = sem_open(SEM_BUFFER_NAME);
 
     printf("Hairdresser pid: %d arrived\n", getpid());

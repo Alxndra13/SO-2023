@@ -10,7 +10,7 @@ int main()
     shared[0] = '\0';
 
     sem_create(SEM_QUEUE_NAME, QUEUE_TOTAL);
-    Semaphore sem_chairs = sem_create(SEM_CHAIRS_NAME, 0);
+    sem_create(SEM_CHAIRS_NAME, 0);
     sem_create(SEM_HAIRDRESSERS_NAME, CHAIR_TOTAL);
     sem_create(SEM_BUFFER_NAME, 0);
 
