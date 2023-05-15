@@ -12,46 +12,51 @@
 const int num_threads = GRID_WIDTH * GRID_HEIGHT;
 pthread_t threads[GRID_WIDTH][GRID_HEIGHT];
 
-struct ThreadData {
+typedef struct ThreadData
+{
     int row;
     int col;
     char *src;
     char *dst;
-};
+} ThreadData;
 
-void* thread_worker(void *arg) {
-    struct ThreadData *data = (struct ThreadData*) arg;
-    int row = data->row;
-    int col = data->col;
-    char *src = data->src;
-    char *dst = data->dst;
-    printf("Hello from thread id: %d, i: %d, j: %d\n", pthread_self(), row, col);
-    dst[row * GRID_WIDTH + col] = is_alive(row, col, src);
+void *thread_worker(void *arg)
+{
+    ThreadData *data = (ThreadData *)arg;
+    data->dst[data->row * GRID_WIDTH + data->col] = is_alive(data->row, data->col, data->src);
     return NULL;
 }
 
-void create_threads(struct ThreadData thread_data[][GRID_WIDTH], char *foreground, char *background) {
-    for (int i = 0; i < GRID_HEIGHT; ++i) {
-        for (int j = 0; j < GRID_WIDTH; ++j) {
-            fflush(stdout);
-            thread_data[i][j].row = i;
-            thread_data[i][j].col = j;
-            thread_data[i][j].src = foreground;
-            thread_data[i][j].dst = background;
-            pthread_create(&threads[i][j], NULL, thread_worker, &thread_data[i][j]);
+void create_threads(char *foreground, char *background)
+{
+
+    for (int i = 0; i < GRID_HEIGHT; ++i)
+    {
+        for (int j = 0; j < GRID_WIDTH; ++j)
+        {
+            ThreadData *thread_data = malloc(sizeof(ThreadData));
+            thread_data->src = foreground;
+            thread_data->dst = background;
+            thread_data->row = i;
+            thread_data->col = j;
+            pthread_create(&threads[i][j], NULL, thread_worker, (void *)thread_data);
         }
     }
 }
 
-void wait_for_threads() {
-    for (int i = 0; i < GRID_HEIGHT; ++i) {
-        for (int j = 0; j < GRID_WIDTH; ++j) {
+void wait_for_threads()
+{
+    for (int i = 0; i < GRID_HEIGHT; ++i)
+    {
+        for (int j = 0; j < GRID_WIDTH; ++j)
+        {
             pthread_join(threads[i][j], NULL);
         }
     }
 }
 
-int main() {
+int main()
+{
     srand(time(NULL));
     setlocale(LC_CTYPE, "");
     initscr(); // Start curses mode
@@ -62,13 +67,12 @@ int main() {
 
     init_grid(foreground);
 
-    struct ThreadData thread_data[GRID_HEIGHT][GRID_WIDTH];
-
-    while (true) {
-        // draw_grid(foreground);
+    while (true)
+    {
+        draw_grid(foreground);
         usleep(500 * 1000);
 
-        create_threads(thread_data, foreground, background);
+        create_threads(foreground, background);
         wait_for_threads();
 
         tmp = foreground;

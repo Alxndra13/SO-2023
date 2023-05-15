@@ -85,6 +85,7 @@ bool is_alive(int row, int col, char *grid)
     }
 }
 
+// old version
 void update_grid(char *src, char *dst)
 {
     for (int i = 0; i < GRID_HEIGHT; ++i)
