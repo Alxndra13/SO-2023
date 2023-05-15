@@ -75,17 +75,6 @@ void update_threads(char *foreground, char *background)
     }
 }
 
-void wait_for_threads()
-{
-    for (int i = 0; i < GRID_HEIGHT; ++i)
-    {
-        for (int j = 0; j < GRID_WIDTH; ++j)
-        {
-            pthread_join(threads[i][j], NULL);
-        }
-    }
-}
-
 int main()
 {
     srand(time(NULL));
