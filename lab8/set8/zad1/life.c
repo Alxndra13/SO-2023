@@ -10,7 +10,6 @@
 #include <signal.h>
 #include "grid.h"
 
-const int num_threads = GRID_WIDTH * GRID_HEIGHT;
 pthread_t threads[GRID_WIDTH][GRID_HEIGHT];
 
 typedef struct ThreadData
