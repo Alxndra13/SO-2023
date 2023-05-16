@@ -93,8 +93,6 @@ int main()
         draw_grid(foreground);
         usleep(500 * 1000);
 
-        // create_threads(foreground, background);
-        // wait_for_threads();
         update_threads(foreground, background);
 
         tmp = foreground;

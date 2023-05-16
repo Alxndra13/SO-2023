@@ -1,7 +1,6 @@
-// Napisz program w którym uruchomisz n wątków (parametr programu) realizujących te same funkcje.
-// W ramach swojego działania wątki mają inkrementować wartość zmiennej globalnej i wypisywać jej waetość na konsole wraz z informacją
-// identyfikującą wątek dokonujący wypisania.
-// Dostęp do zmiennej zabezpiecz mutexem
+// Zmodyfikuj poprzednie że zmienisz atrybuty mutexu odpowiednio na
+// PTHREAD_MUTEX_NORMAL, PTHREAD_MUTEX_ERRORCHECK, PTHREAD_MUTEX_RECURSIVE, PTHREAD_MUTEX_dEFAULT
+// i sprawdzisz działanie programu w każdym z przypadków
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -9,7 +8,7 @@
 #define THREAD_TOTAL 5
 
 int global_variable = 0;
-pthread_mutex_t mutex;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_t threads[THREAD_TOTAL];
 int threads_ids[THREAD_TOTAL];
 
@@ -25,7 +24,6 @@ void *thread_worker(void *arg)
 
 int main()
 {
-    pthread_mutex_init(&mutex, NULL);
 
     // tworzenie wątków
     for (int i = 0; i < THREAD_TOTAL; i++)
